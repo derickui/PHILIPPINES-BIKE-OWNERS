@@ -1,0 +1,63 @@
+<!-- lostfound.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lost & Found - Bike Register PH</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: white; }
+    header { background-color: #002f86; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: bold; }
+    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 4rem 2rem; max-width: 1000px; margin: 0 auto; }
+    h1 { text-align: center; font-size: 2.5rem; margin-bottom: 2rem; }
+    .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .card { background-color: #222; padding: 1rem; border-radius: 8px; box-shadow: 0 0 5px #000; }
+    .card h3 { margin: 0.5rem 0; }
+    .card p { font-size: 0.95rem; line-height: 1.5; }
+    .report-btn { margin-top: 2rem; display: block; text-align: center; }
+    .report-btn a { background: #ffcc00; color: black; padding: 1rem 2rem; font-weight: bold; text-decoration: none; border-radius: 5px; }
+    footer { background-color: #000; text-align: center; padding: 1rem; font-size: 0.9rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">BIKE REGISTER PH</div>
+    <nav>
+      <a href="home.html">HOME</a>
+      <a href="about.html">ABOUT US</a>
+      <a href="register.html">REGISTER MY BIKES</a>
+      <a href="lostfound.html">LOST & FOUND</a>
+      <a href="events.html">EVENTS</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="#">LOG IN / SIGN UP</a>
+    </nav>
+  </header>
+  <main>
+    <h1>LOST & FOUND</h1>
+    <div class="card-container">
+      <div class="card">
+        <h3>Lost: Red MTB</h3>
+        <p><strong>Location:</strong> Quezon City</p>
+        <p><strong>Date:</strong> May 15, 2025</p>
+        <p>Red mountain bike with black saddle. Missing near UP Diliman area.</p>
+      </div>
+      <div class="card">
+        <h3>Found: Blue Road Bike</h3>
+        <p><strong>Location:</strong> Pasig City</p>
+        <p><strong>Date:</strong> May 18, 2025</p>
+        <p>Spotted in Barangay Kapitolyo. No visible owner nearby.</p>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+    <div class="report-btn">
+      <a href="#">REPORT LOST OR FOUND BIKE</a>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 BIKE REGISTER PH. ALL RIGHTS RESERVED.
+  </footer>
+</body>
+</html>

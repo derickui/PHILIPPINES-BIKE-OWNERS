@@ -1,0 +1,85 @@
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register My Bikes - Bike Register PH</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #111; color: white; }
+    header { background-color: #002f86; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.5rem; font-weight: bold; }
+    nav a { color: white; margin: 0 1rem; text-decoration: none; font-weight: bold; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 4rem 2rem; max-width: 600px; margin: auto; }
+    h1 { text-align: center; margin-bottom: 2rem; }
+    form { display: flex; flex-direction: column; gap: 1rem; }
+    input, textarea { padding: 0.75rem; border: none; border-radius: 5px; font-size: 1rem; }
+    button { background: #ffcc00; color: black; padding: 1rem; font-size: 1.25rem; font-weight: bold; border: none; cursor: pointer; }
+    footer { background-color: #000; text-align: center; padding: 1rem; font-size: 0.9rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">BIKE REGISTER PH</div>
+    <nav>
+      <a href="home.html">HOME</a>
+      <a href="about.html">ABOUT US</a>
+      <a href="register.html">REGISTER MY BIKES</a>
+      <a href="lostfound.html">LOST & FOUND</a>
+      <a href="events.html">EVENTS</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="#">LOG IN / SIGN UP</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>REGISTER MY BIKE</h1>
+    <form id="bike-form">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <input type="text" id="model" placeholder="Bike Model" required />
+      <input type="text" id="serial" placeholder="Serial Number" required />
+      <input type="text" id="color" placeholder="Color" required />
+      <textarea id="notes" placeholder="Additional Notes" rows="4"></textarea>
+      <button type="submit">Submit Registration</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 BIKE REGISTER PH. ALL RIGHTS RESERVED.
+  </footer>
+
+  <script>
+    document.getElementById("bike-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        model: document.getElementById("model").value,
+        serial: document.getElementById("serial").value,
+        color: document.getElementById("color").value,
+        notes: document.getElementById("notes").value
+      };
+
+      fetch("https://script.google.com/macros/s/AKfycbzVX7bXG30i994jjuYMKTFMXAy1l3d7_Tk9wfu-3LPtnRzzzZHx-ntA_cR7MKDW_68z/exec", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+      .then(res => res.text())
+      .then(data => {
+        alert("Bike successfully registered!");
+        document.getElementById("bike-form").reset();
+      })
+      .catch(err => {
+        alert("There was an error submitting the form.");
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>
